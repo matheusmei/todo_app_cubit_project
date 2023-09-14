@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app_cubit_project/cubits/activities_count/activities_count_cubit.dart';
 import 'package:todo_app_cubit_project/cubits/cubits.dart';
+import 'package:todo_app_cubit_project/pages/home/components/search_and_filter_activity.dart';
+import 'package:todo_app_cubit_project/pages/home/components/show_activities.dart';
 import 'package:todo_app_cubit_project/pages/home/components/todo_create_activity.dart';
 
 import 'components/todo_header.dart';
@@ -20,30 +22,35 @@ class HomePage extends StatelessWidget {
             vertical: 40.0,
           ),
           child: Column(
-            children: const  [
+            children: const [
               TodoHeader(),
               // BlocBuilder<ActivitiesCountCubit, ActivitiesCountState>(
-                // builder: (context, state) {
-                //   return TodoHeader(
-                    // activityCount: 
-                    // Text(
-                    //   '${state.activitiesCount} itens left',
-                    //   style: const TextStyle(
-                    //       fontSize: 20.0,
-                    //       fontWeight: FontWeight.bold,
-                    //       color: Colors.redAccent),
-                    // ),
-                    //ANOTHER WAY TO CALL THE ACTIVITIES COUNT
-                    // activityCount: Text(
-                    // '${context.watch<ActivitiesCountCubit>().state.activitiesCount} itens left'
-                    // ),
-                  // );
-                // },
+              // builder: (context, state) {
+              //   return TodoHeader(
+              // activityCount:
+              // Text(
+              //   '${state.activitiesCount} itens left',
+              //   style: const TextStyle(
+              //       fontSize: 20.0,
+              //       fontWeight: FontWeight.bold,
+              //       color: Colors.redAccent),
+              // ),
+              //ANOTHER WAY TO CALL THE ACTIVITIES COUNT
+              // activityCount: Text(
+              // '${context.watch<ActivitiesCountCubit>().state.activitiesCount} itens left'
+              // ),
+              // );
+              // },
               // ),
               // TodoCreateActivity(onActivityAdded: (newActivity) {
               //   context.read<TodoListCubit>().addActivity(newActivity);
               // }),
-             TodoCreateActivity()
+              TodoCreateActivity(),
+              SizedBox(
+                height: 20.0,
+              ),
+              SearchAndFilterActivity(),
+              ShowActivities(),
             ],
           ),
         ),
