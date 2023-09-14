@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<ActivitiesCountCubit>(
           create: (context) => ActivitiesCountCubit(
+            initialActivitiesCount: context.read<TodoListCubit>().state.todoList.length,
             todoListCubit: BlocProvider.of<TodoListCubit>(context),
           ),
         ),
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         }),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'To Do App Cubit Version',
         theme: ThemeData(
           primarySwatch: Colors.blue,

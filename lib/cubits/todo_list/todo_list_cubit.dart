@@ -1,4 +1,3 @@
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app_cubit_project/models/todo_model.dart';
@@ -14,6 +13,7 @@ class TodoListCubit extends Cubit<TodoListState> {
     final newTodos = [...state.todoList, newTodo];
 
     emit(state.copyWith(todoList: newTodos));
+    print(state);
   }
 
   //Edit Activity
@@ -56,8 +56,4 @@ class TodoListCubit extends Cubit<TodoListState> {
 
     emit(state.copyWith(todoList: newTodo));
   }
-
-
-
-
 }

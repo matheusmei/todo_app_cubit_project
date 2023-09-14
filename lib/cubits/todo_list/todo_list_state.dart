@@ -10,9 +10,10 @@ class TodoListState extends Equatable {
 
   factory TodoListState.initial() {
     return TodoListState(todoList: [
-      TodoModel(id: '1', description: 'Clean the room'),
-      TodoModel(id: '2', description: 'Wash the dishes'),
-      TodoModel(id: '3', description: 'Disturb the wife'),
+      // TodoModel(id: '1', description: 'Clean the room'),
+      // TodoModel(id: '2', description: 'Wash the dishes'),
+      // TodoModel(id: '3', description: 'Disturb the wife'),
+      // TodoModel(id: '4', description: 'Disturb the wife'),
     ]);
   }
   
