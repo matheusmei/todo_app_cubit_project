@@ -13,15 +13,17 @@ class FilteredActivityListCubit extends Cubit<FilteredActivityListState> {
   late final StreamSubscription searchsSubscription;
   late final StreamSubscription todoListSubscription;
 
+  final List<TodoModel> initialActivityList;
   final FiltersCubit filtersCubit;
   final SearchsCubit searchsCubit;
   final TodoListCubit todoListCubit;
 
   FilteredActivityListCubit({
+    required this.initialActivityList,
     required this.filtersCubit,
     required this.searchsCubit,
     required this.todoListCubit,
-  }) : super(FilteredActivityListState.initial()) {
+  }) : super(FilteredActivityListState(filteredTodos: initialActivityList)) {
     filtersSubscription =
         filtersCubit.stream.listen((TodoFiltersState filtersState) {
       setFilteredTodos();
